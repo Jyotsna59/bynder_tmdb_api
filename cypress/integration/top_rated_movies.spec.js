@@ -1,23 +1,28 @@
 describe('Top Rated Movies API', () => {
     context('GET /Top Rated Movie List', () => {
-        const base_url='https://developers.themoviedb.org/3/movies/rate-movie'
-        it('send a valid api key and get 200 response code', () => {
+        it('should return a list of top rated movies', () => {
             cy.request({
                 method: 'GET',
-                end_point: '/movie/top_rated',
-                api_key: 'e3c9e03e7e810aba89b7828365892a92'
+                // url: 'https://api.themoviedb.org/3/movie/550',
+                url: 'https://developers.themoviedb.org/3/movies/get-top-rated-movies',
+                qs: {
+                  api_key: 'e3c9e03e7e810aba89b7828365892a92'
+                }
             })
-            .should((response) => {
-                    expect(response.status).to.eq(200)
+                .should((response) => {
                     cy.log(JSON.stringify(response.body))
+                    expect(response.status).to.eq(200)
                 });
         });
         
         it('send a invalid authentication credentials & get 401 Unauthorized response code', () => {
             cy.request({
                 method: 'GET',
-                end_point: '/movie/top_rated',
-                api_key: 'e3c9e03e7e810aba89b7828365892a92'
+                // url: 'https://api.themoviedb.org/3/movie/550',
+                url: 'https://developers.themoviedb.org/3/movies/get-top-rated-movies',
+                qs: {
+                  api_key: 'e3c9e03e7e810aba89b7828365892a'
+                }
             })
                 .should((response) => {
                     expect(response.status).to.eq(400)
