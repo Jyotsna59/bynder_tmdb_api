@@ -1,31 +1,28 @@
 describe('Top Rated Movies API', () => {
-    context('GET /Top Rated Movie List', () => {
+    let apiKey = Cypress.env('api_key');
+
+    context('GET Top Rated Movie List', () => {
         it('should return a list of top rated movies', () => {
             cy.request({
                 method: 'GET',
-                // url: 'https://api.themoviedb.org/3/movie/550',
-                url: 'https://developers.themoviedb.org/3/movies/get-top-rated-movies',
-                qs: {
-                  api_key: 'e3c9e03e7e810aba89b7828365892a92'
-                }
+                url: '/top_rated',
+                qs: {api_key: apiKey}
             })
                 .should((response) => {
                     cy.log(JSON.stringify(response.body))
                     expect(response.status).to.eq(200)
                 });
         });
-        
+
         it('send a invalid authentication credentials & get 401 Unauthorized response code', () => {
             cy.request({
                 method: 'GET',
-                // url: 'https://api.themoviedb.org/3/movie/550',
-                url: 'https://developers.themoviedb.org/3/movies/get-top-rated-movies',
-                qs: {
-                  api_key: 'e3c9e03e7e810aba89b7828365892a'
-                }
+                url: '/top_rated',
+                qs: {api_key: '22224234244'},
+                failOnStatusCode: false
             })
                 .should((response) => {
-                    expect(response.status).to.eq(400)
+                    expect(response.status).to.eq(401)
                     cy.log(JSON.stringify(response.body))
                 });
         });

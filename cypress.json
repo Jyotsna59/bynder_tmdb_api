@@ -1,1 +1,7 @@
-{}
+{
+    "baseUrl": "https://api.themoviedb.org/3/movie",
+    "env": {
+        "api_key": "e3c9e03e7e810aba89b7828365892a92"
+    },
+    "video": false
+}
