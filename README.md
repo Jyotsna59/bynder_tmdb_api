@@ -1,6 +1,6 @@
-# TMBP REST API Automation
+# TMDB REST API Automation
 
-This repository has Automation code for TMBD top-rated-movies and rate-movies APIs.
+This repository has Automation code for TMDB top-rated-movies and rate-movies APIs.
 
 Tests are is contained within the `rateMovie.spec.js` and `topRatedMovies.spec.js` files.
 
