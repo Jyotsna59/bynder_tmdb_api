@@ -4,7 +4,10 @@
   "description": "Automation test script for TMDB API spec.",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec **/*.spec.js --browser chrome" 
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run && npm run create:html:report"
   },
   "repository": {
     "type": "git",
