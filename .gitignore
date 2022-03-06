@@ -5,5 +5,3 @@ cypress/screenshots
 package-lock.json
 cypress-combined-report.json
 .dockerIgnore
-TestReport
-mochawesome-report

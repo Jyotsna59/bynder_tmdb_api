@@ -1,0 +1,142 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-06T11:25:20.789Z",
+    "end": "2022-03-06T11:25:21.408Z",
+    "duration": 619,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ff6a97b9-a1eb-4805-8119-bfdfa87c51c7",
+      "title": "",
+      "fullFile": "cypress/integration/topRatedMovies.spec.js",
+      "file": "cypress/integration/topRatedMovies.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de0b388f-e16a-4055-8284-1e1ece1072bf",
+          "title": "Top Rated Movies API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f114f3c9-c636-4f67-89f9-34046fdad1f9",
+              "title": "GET Top Rated Movie List",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should return a list of top rated movies",
+                  "fullTitle": "Top Rated Movies API GET Top Rated Movie List should return a list of top rated movies",
+                  "timedOut": null,
+                  "duration": 466,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.request({\n  method: 'GET',\n  url: '/top_rated',\n  qs: {\n    api_key: apiKey\n  }\n}).should(response => {\n  cy.log(JSON.stringify(response.body));\n  expect(response.status).to.eq(200);\n});",
+                  "err": {},
+                  "uuid": "9013d394-58f0-4416-8742-34fde76575c6",
+                  "parentUUID": "f114f3c9-c636-4f67-89f9-34046fdad1f9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "send a invalid authentication credentials & get 401 Unauthorized response code",
+                  "fullTitle": "Top Rated Movies API GET Top Rated Movie List send a invalid authentication credentials & get 401 Unauthorized response code",
+                  "timedOut": null,
+                  "duration": 125,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.request({\n  method: 'GET',\n  url: '/top_rated',\n  qs: {\n    api_key: '22224234244'\n  },\n  failOnStatusCode: false\n}).should(response => {\n  expect(response.status).to.eq(401);\n  cy.log(JSON.stringify(response.body));\n});",
+                  "err": {},
+                  "uuid": "96c96e88-f138-4b4b-8b8b-0aa473326324",
+                  "parentUUID": "f114f3c9-c636-4f67-89f9-34046fdad1f9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9013d394-58f0-4416-8742-34fde76575c6",
+                "96c96e88-f138-4b4b-8b8b-0aa473326324"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 591,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.1.1"
+    }
+  }
+}
