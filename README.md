@@ -32,4 +32,4 @@ Generated test reports can be viewed in `<project_root>\TestReport\cypress-combi
 
 ## Sample report screenshot
 
-![Report Image](.\report_image.JPG?raw=true "Test Report")
+![Report Image](https://github.com/Jyotsna59/bynder_tmdb_api/blob/main/report_image.JPG?raw=true "Test Report")
