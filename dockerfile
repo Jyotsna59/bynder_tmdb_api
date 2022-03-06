@@ -6,6 +6,8 @@ WORKDIR /app
 COPY . /app
 
 RUN npm install cypress --save-dev
+RUN ./node_modules/.bin/cypress install
 RUN $(npm bin)/cypress verify
+RUN npm i --D mocha mochawesome mochawesome-merge mochawesome-report-generator
 
-ENTRYPOINT ["npm","test"]
+ENTRYPOINT ["npm","run","test:cli"]
