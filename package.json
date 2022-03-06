@@ -6,7 +6,7 @@
   "scripts": {
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
     "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json",
-    "delete:reportFolder": "rmdir /S /Q mochawesome-report",
+    "delete:reportFolder": "if exist mochawesome-report rmdir /S /Q mochawesome-report",
     "test:cli": "npm run delete:reportFolder && cypress run && npm run create:html:report"
   },
   "repository": {
