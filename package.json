@@ -6,7 +6,7 @@
   "scripts": {
     "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
     "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json",
-    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "delete:reportFolder": "rmdir /S /Q mochawesome-report",
     "test:cli": "npm run delete:reportFolder && cypress run && npm run create:html:report"
   },
   "repository": {
@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/Jyotsna59/bynder_tmdb_api.git",
   "devDependencies": {
-    "cypress": "^9.5.0"
+    "cypress": "^9.5.0",
+    "mocha": "^9.2.1",
+    "mochawesome": "^7.1.2",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.1.1"
   }
 }

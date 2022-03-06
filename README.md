@@ -26,3 +26,10 @@ I have used Github Actions.
 
 ## Reports
 I have used Cypress's builtin MochaAwesome reports.
+
+## To View Reports:
+Generated test reports can be viewed in `<project_root>\TestReport\cypress-combined-report.html`
+
+## Sample report screenshot
+
+![Report Image](.\report_image.JPG?raw=true "Test Report")

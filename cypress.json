@@ -3,5 +3,11 @@
     "env": {
         "api_key": "e3c9e03e7e810aba89b7828365892a92"
     },
-    "video": false
+    "video": false,
+    "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+    "reporterOptions": {
+      "overwrite": false,
+      "html": false,
+      "json": true
+   }
 }
