@@ -1,14 +1,22 @@
 {
-  "name": "api_automation_with_cypress",
+  "name": "bynder_api_automation_assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automation test script for TMDB API spec.",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run"
+    "test": "npx cypress run --spec **/*.spec.js --browser chrome" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jyotsna59/bynder_tmdb_api.git"
   },
   "author": "Jyotsna Srivastava",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jyotsna59/bynder_tmdb_api.git"
+  },
+  "homepage": "https://github.com/Jyotsna59/bynder_tmdb_api.git",
   "devDependencies": {
-    "cypress": "^9.5.1"
+    "cypress": "^9.5.0"
   }
 }
