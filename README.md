@@ -1,3 +1,5 @@
+[![Tests](https://github.com/Jyotsna59/bynder_tmdb_api/actions/workflows/main.yml/badge.svg?event=push)](https://github.com/Jyotsna59/bynder_tmdb_api/actions/workflows/main.yml)
+
 # TMDB REST API Automation
 
 This repository has Automation code for TMDB top-rated-movies and rate-movies APIs.
@@ -12,7 +14,7 @@ Tests are is contained within the `rateMovie.spec.js` and `topRatedMovies.spec.j
 ## Run test on Docker
 
 ### Build docker image
-    docker build -t <image_name>
+    docker build -t <image_name> .
 
 ### Run docker container
     docker run -it <docker_image>
