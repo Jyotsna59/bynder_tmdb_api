@@ -6,10 +6,9 @@ This repository has Automation code for TMDB top-rated-movies and rate-movies AP
 
 Tests are is contained within the `rateMovie.spec.js` and `topRatedMovies.spec.js` files.
 
-`npm test` runs the above specs if you want to run locally on terminal.
 
 ## Run the tests locally
-    npm test
+    npm run test:cli
 
 ## Run test on Docker
 
@@ -25,7 +24,10 @@ After running docker container you will see tests passed in the console.
 I have used Github Actions.
 
 ## Reports
-I have used Cypress's builtin MochaAwesome reports.
+I have used Cypress's builtin Mocha reports with following packages:
+* mochawesome
+* mochawesome-merge
+* mochawesome-report-generator
 
 ## To View Reports:
 Generated test reports can be viewed in `<project_root>\TestReport\cypress-combined-report.html`
